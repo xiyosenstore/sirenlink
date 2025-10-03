@@ -1725,7 +1725,7 @@
 
               // Create the new format SS URL with dynamic port
               // connectionUrl = `ss://${userInfo}@${server}:${port}?encryption=none&type=ws&host=${host}&path=${path}&security=${security}&sni=${sni}#${name}`;
-              connectionUrl = `ss://${safeBase64Encode(ssAuth)}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(ssLabel)}`;
+              connectionUrl = `ss://${userInfo}@${server}:${port}?encryption=none&type=ws&host=${host}&path=${path}&security=${security}&sni=${sni}#${name}`;
             }
 
             // Display the result
