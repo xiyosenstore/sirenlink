@@ -1419,7 +1419,7 @@
       let filteredProxyList = [];
       let selectedProxy = null;
       const defaultProxyUrl = "https://raw.githubusercontent.com/xiyosenstore/hompage/refs/heads/main/ProxyList%20(1)%20(1).txt";
-      const serverDomains = ["blackshadow.dpdns.org", "-"];
+      const serverDomains = ["siren-web.benxx.workers.dev", "-"];
       let selectedServerDomain = serverDomains[0]; // Default to first domain
       const defaultUUID = "aacac2d2-cac8-442a-9f2c-4e4f807065f5";
       const itemsPerPage = 10;
@@ -1725,7 +1725,7 @@
 
               // Create the new format SS URL with dynamic port
               // connectionUrl = `ss://${userInfo}@${server}:${port}?encryption=none&type=ws&host=${host}&path=${path}&security=${security}&sni=${sni}#${name}`;
-              connectionUrl = `ss://${userInfo}@${server}:${port}?v2ray-plugin%3Btls%3Bmux=0%3Bmode=websocket%3Bpath=${path}%3Bsni=${sni}#${name}`;
+              connectionUrl = `ss://${safeBase64Encode(ssAuth)}@${bugDomain}:${tls ? 443 : 80}?encryption=none&security=${tls ? 'tls' : 'none'}&type=ws&host=${bugHost}&path=%2F${proxyHost}-${proxyPort}&sni=${bugSni}#${encodeURIComponent(ssLabel)}`;
             }
 
             // Display the result
@@ -2180,7 +2180,7 @@
 
   // Function to check proxy status in the list
 function checkProxyStatusInList(proxy, statusBadge) {
-  const statusURL = `https://afrcloud.dpdns.org/${proxy.ip}:${proxy.port}`
+  const statusURL = `https://api.jb8fd7grgd.workers.dev/${proxy.ip}:${proxy.port}`
 
   fetch(statusURL)
     .then((response) => response.json())
@@ -2367,7 +2367,7 @@ function checkProxyStatusInList(proxy, statusBadge) {
 // Function to check proxy status in the account creation section
 function checkProxyStatus(proxy) {
   const startTime = performance.now()
-  const statusURL = `https://afrcloud.dpdns.org/${proxy.ip}:${proxy.port}`
+  const statusURL = `https://api.jb8fd7grgd.workers.dev/${proxy.ip}:${proxy.port}`
   const statusContainer = document.getElementById("proxy-status-container")
   const statusLoading = document.getElementById("proxy-status-loading")
   const statusActive = document.getElementById("proxy-status-active")
