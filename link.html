@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -24,11 +25,11 @@
     />
     <style>
       :root {
-        --primary: #6366f1;
-        --primary-dark: #4f46e5;
-        --secondary: #10b981;
-        --dark: #0f172a;
-        --dark-light: #1e293b;
+        --primary: #ff6f61; /* Sunset: Coral/Red Orange */
+        --primary-dark: #e65100; /* Sunset: Deep Orange */
+        --secondary: #ffc107; /* Sunset: Amber/Yellow */
+        --dark: #1e1530; /* Sunset: Night Purple */
+        --dark-light: #3a2a53; /* Sunset: Darker Purple */
         --light: #f8fafc;
         --gray: #64748b;
         --gray-light: #94a3b8;
@@ -49,15 +50,15 @@
       }
 
       .card {
-        background: rgba(30, 41, 59, 0.6);
-        border: 1px solid rgba(99, 102, 241, 0.15);
+        background: rgba(58, 42, 83, 0.6); /* Using new --dark-light */
+        border: 1px solid rgba(255, 111, 97, 0.15); /* Using new --primary */
         border-radius: 12px;
         transition: all 0.2s ease;
       }
 
       .input {
-        background: rgba(15, 23, 42, 0.5);
-        border: 1px solid rgba(99, 102, 241, 0.15);
+        background: rgba(30, 21, 48, 0.5); /* Using new --dark */
+        border: 1px solid rgba(255, 111, 97, 0.15); /* Using new --primary */
         color: var(--light);
         border-radius: 8px;
         transition: all 0.2s ease;
@@ -66,16 +67,16 @@
       .input:focus {
         border-color: var(--primary);
         outline: none;
-        box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
+        box-shadow: 0 0 0 2px rgba(255, 111, 97, 0.1); /* Using new --primary */
       }
 
       .input[readonly] {
-        background: rgba(51, 65, 85, 0.3);
+        background: rgba(71, 85, 105, 0.3); /* Keep Slate-600/700 equivalent */
       }
 
       .select {
-        background: rgba(15, 23, 42, 0.5);
-        border: 1px solid rgba(99, 102, 241, 0.15);
+        background: rgba(30, 21, 48, 0.5); /* Using new --dark */
+        border: 1px solid rgba(255, 111, 97, 0.15); /* Using new --primary */
         color: var(--light);
         border-radius: 8px;
         appearance: none;
@@ -89,7 +90,7 @@
       .select:focus {
         border-color: var(--primary);
         outline: none;
-        box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1);
+        box-shadow: 0 0 0 2px rgba(255, 111, 97, 0.1); /* Using new --primary */
       }
 
       .btn-primary {
@@ -105,8 +106,8 @@
       }
 
       .btn-secondary {
-        background: rgba(51, 65, 85, 0.5);
-        border: 1px solid rgba(99, 102, 241, 0.15);
+        background: rgba(71, 85, 105, 0.5); /* Keep Slate-600/700 equivalent */
+        border: 1px solid rgba(255, 111, 97, 0.15); /* Using new --primary */
         color: var(--light);
         border-radius: 8px;
         font-weight: 500;
@@ -141,18 +142,18 @@
 
       .divider {
         height: 1px;
-        background: rgba(99, 102, 241, 0.2);
+        background: rgba(255, 111, 97, 0.2); /* Using new --primary */
       }
 
       .code {
-        background: rgba(15, 23, 42, 0.5);
-        border: 1px solid rgba(99, 102, 241, 0.15);
+        background: rgba(30, 21, 48, 0.5); /* Using new --dark */
+        border: 1px solid rgba(255, 111, 97, 0.15); /* Using new --primary */
         font-family: "Courier New", monospace;
         border-radius: 8px;
       }
 
       .loading-spinner {
-        border: 3px solid rgba(51, 65, 85, 0.3);
+        border: 3px solid rgba(71, 85, 105, 0.3); /* Keep Slate-600/700 equivalent */
         border-top: 3px solid var(--primary);
         border-radius: 50%;
         width: 40px;
@@ -161,7 +162,7 @@
       }
 
       .loading-spinner-sm {
-        border: 2px solid rgba(51, 65, 85, 0.3);
+        border: 2px solid rgba(71, 85, 105, 0.3); /* Keep Slate-600/700 equivalent */
         border-top: 2px solid var(--primary);
         border-radius: 50%;
         width: 24px;
@@ -180,17 +181,17 @@
       }
 
       .proxy-card {
-        background: rgba(30, 41, 59, 0.4);
+        background: rgba(58, 42, 83, 0.4); /* Using new --dark-light */
         border-radius: 10px;
         padding: 0.75rem;
         margin-bottom: 0.75rem;
-        border: 1px solid rgba(99, 102, 241, 0.1);
+        border: 1px solid rgba(255, 111, 97, 0.1); /* Using new --primary */
         transition: all 0.2s ease;
       }
 
       .proxy-card:hover {
-        background: rgba(51, 65, 85, 0.4);
-        border-color: rgba(99, 102, 241, 0.2);
+        background: rgba(71, 85, 105, 0.4); /* Keep Slate-600/700 equivalent */
+        border-color: rgba(255, 111, 97, 0.2); /* Using new --primary */
         transform: translateY(-2px);
       }
 
@@ -203,8 +204,8 @@
         border-radius: 8px;
         font-size: 0.875rem;
         transition: all 0.2s ease;
-        background: rgba(51, 65, 85, 0.3);
-        border: 1px solid rgba(99, 102, 241, 0.1);
+        background: rgba(71, 85, 105, 0.3); /* Keep Slate-600/700 equivalent */
+        border: 1px solid rgba(255, 111, 97, 0.1); /* Using new --primary */
       }
 
       .pagination-btn.active {
@@ -243,7 +244,7 @@
         margin-top: 0.5rem;
         padding: 0.5rem;
         border-radius: 0.5rem;
-        background: rgba(15, 23, 42, 0.3);
+        background: rgba(30, 21, 48, 0.3); /* Using new --dark */
       }
 
       .wildcard-container.show {
@@ -324,16 +325,16 @@
         padding: 1.5rem 0;
         background: linear-gradient(
           to right,
-          rgba(79, 70, 229, 0.05) 0%,
-          rgba(16, 185, 129, 0.05) 100%
+          rgba(255, 111, 97, 0.05) 0%, /* New Primary-based (Coral) */
+          rgba(255, 193, 7, 0.05) 100% /* New Secondary-based (Amber) */
         );
       }
 
       .footer {
-        background: rgba(15, 23, 42, 0.40);
+        background: rgba(30, 21, 48, 0.40); /* Using new --dark */
         backdrop-filter: blur(3px);
         border-radius: 12px;
-        border: 1px solid rgba(99, 102, 241, 0.1);
+        border: 1px solid rgba(255, 111, 97, 0.1); /* Using new --primary */
       }
 
       .donation-btn {
@@ -353,8 +354,8 @@
       }
 
       .modal-content {
-        background: linear-gradient(to bottom, #1e293b, #0f172a);
-        border: 1px solid rgba(99, 102, 241, 0.2);
+        background: linear-gradient(to bottom, #3a2a53, #1e1530); /* New gradient based on --dark-light to --dark */
+        border: 1px solid rgba(255, 111, 97, 0.2); /* Using new --primary */
         border-radius: 12px;
       }
 
@@ -402,14 +403,13 @@
 
     <div class="container mx-auto px-2 sm:px-4 py-4 sm:py-6 max-w-xl">
       <div class="card overflow-hidden">
-        <!-- Header -->
         <div class="header">
           <div class="flex items-center justify-center">
             <div class="mr-3">
-              <i class="fas fa-network-wired text-4xl text-indigo-400"></i>
+              <i class="fas fa-network-wired text-4xl text-rose-400"></i>
             </div>
             <h1
-              class="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-emerald-400"
+              class="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-amber-400"
             >
               Proxy Database
             </h1>
@@ -417,13 +417,12 @@
         </div>
 
         <div class="p-6">
-          <!-- Proxy List Section -->
           <div id="proxy-list-section">
             <div
               class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5"
             >
               <div class="flex items-center mb-3 sm:mb-0">
-                <i class="fas fa-server mr-2 text-indigo-400"></i>
+                <i class="fas fa-server mr-2 text-rose-400"></i>
                 <h2 class="text-xl font-semibold">Proxy List</h2>
               </div>
               <div
@@ -464,10 +463,9 @@
 
             <div id="loading-indicator" class="text-center py-10 hidden">
               <div class="loading-spinner mx-auto mb-4"></div>
-              <p class="text-indigo-300 text-sm">Loading proxy list...</p>
+              <p class="text-rose-300 text-sm">Loading proxy list...</p>
             </div>
 
-            <!-- Search input -->
             <div class="mb-4">
               <div class="relative">
                 <input
@@ -484,26 +482,20 @@
               </div>
             </div>
 
-            <!-- Mobile-friendly proxy list -->
             <div id="proxy-list-container" class="mt-4">
-              <!-- Proxy cards will be populated here -->
-            </div>
+              </div>
 
-            <!-- Pagination controls -->
             <div
               id="pagination-container"
               class="flex justify-center items-center mt-6 space-x-2"
             >
-              <!-- Pagination buttons will be added here -->
-            </div>
+              </div>
 
-            <!-- Proxy count info -->
             <div
               id="proxy-count-info"
               class="text-center mt-3 text-sm text-gray-400"
             >
-              <!-- Proxy count will be shown here -->
-            </div>
+              </div>
 
             <div id="no-proxies-message" class="text-center py-10 hidden">
               <i
@@ -515,18 +507,17 @@
             </div>
           </div>
 
-          <!-- Account Creation Section -->
           <div id="account-creation-section" class="mt-6 hidden">
             <div class="pt-4">
               <div class="divider mb-6"></div>
               <div class="flex justify-between items-center mb-5">
                 <div class="flex items-center">
-                  <i class="fas fa-user-plus mr-2 text-indigo-400"></i>
+                  <i class="fas fa-user-plus mr-2 text-rose-400"></i>
                   <h2 class="text-xl font-semibold">Create Account</h2>
                 </div>
                 <button
                   id="back-to-list"
-                  class="flex items-center text-indigo-400 hover:text-indigo-300 transition-colors text-sm"
+                  class="flex items-center text-rose-400 hover:text-rose-300 transition-colors text-sm"
                 >
                   <i class="fas fa-arrow-left mr-2"></i> Back to List
                 </button>
@@ -534,7 +525,7 @@
 
               <div class="card p-5 mb-6">
                 <h3
-                  class="text-base font-medium text-indigo-400 mb-4 flex items-center"
+                  class="text-base font-medium text-rose-400 mb-4 flex items-center"
                 >
                   <i class="fas fa-server mr-2"></i>
                   Selected Proxy
@@ -545,8 +536,9 @@
                     class="flex items-center space-x-2 bg-slate-800/30 p-3 rounded-lg border border-slate-700/20"
                   >
                     <i
-                      class="fas fa-building text-indigo-400/70 w-5 text-center"
-                    ></i>
+                      class="fas fa-building text-rose-400/70 w-5 text-center"
+                    >
+                    </i>
                     <div>
                       <div class="text-xs text-gray-400">Provider</div>
                       <div
@@ -561,8 +553,9 @@
                     class="flex items-center space-x-2 bg-slate-800/30 p-3 rounded-lg border border-slate-700/20"
                   >
                     <i
-                      class="fas fa-globe-americas text-indigo-400/70 w-5 text-center"
-                    ></i>
+                      class="fas fa-globe-americas text-rose-400/70 w-5 text-center"
+                    >
+                    </i>
                     <div>
                       <div class="text-xs text-gray-400">Country</div>
                       <div
@@ -577,8 +570,9 @@
                     class="flex items-center space-x-2 bg-slate-800/30 p-3 rounded-lg border border-slate-700/20"
                   >
                     <i
-                      class="fas fa-network-wired text-indigo-400/70 w-5 text-center"
-                    ></i>
+                      class="fas fa-network-wired text-rose-400/70 w-5 text-center"
+                    >
+                    </i>
                     <div>
                       <div class="text-xs text-gray-400">IP</div>
                       <div
@@ -593,8 +587,9 @@
                     class="flex items-center space-x-2 bg-slate-800/30 p-3 rounded-lg border border-slate-700/20"
                   >
                     <i
-                      class="fas fa-plug text-indigo-400/70 w-5 text-center"
-                    ></i>
+                      class="fas fa-plug text-rose-400/70 w-5 text-center"
+                    >
+                    </i>
                     <div>
                       <div class="text-xs text-gray-400">Port</div>
                       <div
@@ -676,16 +671,16 @@
 
                   <div
                     id="proxy-status-loading"
-                    class="rounded-lg p-3 bg-indigo-900/10 border border-indigo-500/20"
+                    class="rounded-lg p-3 bg-rose-900/10 border border-rose-500/20"
                   >
                     <div class="flex items-center">
                       <div
-                        class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center mr-3 border border-indigo-500/20"
+                        class="w-10 h-10 rounded-full bg-rose-500/10 flex items-center justify-center mr-3 border border-rose-500/20"
                       >
                         <div class="loading-spinner-sm"></div>
                       </div>
                       <div>
-                        <div class="text-sm font-medium text-indigo-400">
+                        <div class="text-sm font-medium text-rose-400">
                           CHECKING
                         </div>
                         <div class="text-xs text-gray-400">
@@ -697,7 +692,6 @@
                 </div>
               </div>
 
-              <!-- Tabs -->
               <div
                 class="flex justify-center border-b border-gray-700 mb-6 gap-2 sm:gap-4"
               >
@@ -727,7 +721,6 @@
                 </button>
               </div>
 
-              <!-- VMess Form -->
               <div id="vmess-form" class="protocol-form">
                 <form id="vmess-account-form" class="space-y-5">
                   <div>
@@ -818,8 +811,7 @@
                       name="server-domain"
                       class="w-full px-4 py-2.5 select rounded-lg text-sm"
                     >
-                      <!-- Options will be populated dynamically -->
-                    </select>
+                      </select>
                   </div>
 
                   <div>
@@ -867,7 +859,6 @@
                 </form>
               </div>
 
-              <!-- VLESS Form -->
               <div id="vless-form" class="protocol-form hidden">
                 <form id="vless-account-form" class="space-y-5">
                   <div>
@@ -958,8 +949,7 @@
                       name="server-domain"
                       class="w-full px-4 py-2.5 select rounded-lg text-sm"
                     >
-                      <!-- Options will be populated dynamically -->
-                    </select>
+                      </select>
                   </div>
 
                   <div>
@@ -1007,7 +997,6 @@
                 </form>
               </div>
 
-              <!-- Trojan Form -->
               <div id="trojan-form" class="protocol-form hidden">
                 <form id="trojan-account-form" class="space-y-5">
                   <div>
@@ -1098,8 +1087,7 @@
                       name="server-domain"
                       class="w-full px-4 py-2.5 select rounded-lg text-sm"
                     >
-                      <!-- Options will be populated dynamically -->
-                    </select>
+                      </select>
                   </div>
 
                   <div>
@@ -1147,7 +1135,6 @@
                 </form>
               </div>
 
-              <!-- Shadowsocks Form -->
               <div id="ss-form" class="protocol-form hidden">
                 <form id="ss-account-form" class="space-y-5">
                   <div>
@@ -1232,8 +1219,7 @@
                       name="server-domain"
                       class="w-full px-4 py-2.5 select rounded-lg text-sm"
                     >
-                      <!-- Options will be populated dynamically -->
-                    </select>
+                      </select>
                   </div>
 
                   <div>
@@ -1280,7 +1266,6 @@
             </div>
           </div>
 
-          <!-- Result Section -->
           <div id="result-section" class="mt-6 hidden">
             <div class="pt-4">
               <div class="divider mb-6"></div>
@@ -1291,20 +1276,19 @@
                 </div>
                 <button
                   id="back-to-form"
-                  class="flex items-center text-indigo-400 hover:text-indigo-300 transition-colors text-sm"
+                  class="flex items-center text-rose-400 hover:text-rose-300 transition-colors text-sm"
                 >
                   <i class="fas fa-arrow-left mr-2"></i> Back
                 </button>
               </div>
-
               <div class="card p-5 mb-5">
                 <div class="flex justify-between items-center mb-3">
-                  <h3 class="text-base font-medium text-indigo-400">
+                  <h3 class="text-base font-medium text-rose-400">
                     Connection URL
                   </h3>
                   <button
                     id="copy-url"
-                    class="flex items-center text-indigo-400 hover:text-indigo-300 text-xs transition-colors"
+                    class="flex items-center text-rose-400 hover:text-rose-300 text-xs transition-colors"
                   >
                     <i class="far fa-copy mr-1"></i> Copy
                   </button>
@@ -1314,13 +1298,14 @@
                   class="text-xs code p-4 rounded-lg break-all font-mono"
                 ></div>
               </div>
-
               <div class="card p-5">
                 <div class="flex justify-between items-center mb-3">
-                  <h3 class="text-base font-medium text-indigo-400">QR Code</h3>
+                  <h3 class="text-base font-medium text-rose-400">
+                    QR Code
+                  </h3>
                   <button
                     id="download-qr"
-                    class="flex items-center text-indigo-400 hover:text-indigo-300 text-xs transition-colors"
+                    class="flex items-center text-rose-400 hover:text-rose-300 text-xs transition-colors"
                   >
                     <i class="fas fa-download mr-1"></i> Download
                   </button>
@@ -1329,7 +1314,6 @@
                   <div id="qrcode" class="qrcode-container"></div>
                 </div>
               </div>
-
               <div
                 class="mt-6 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3"
               >
@@ -1358,41 +1342,65 @@
           >
             <div class="flex items-center">
               <div
-                class="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center mr-3 border border-indigo-500/20"
+                class="w-10 h-10 rounded-full bg-rose-500/10 flex items-center justify-center mr-3 border border-rose-500/20"
               >
-                <i class="fa-solid fa-cat text-lg text-indigo-400"></i>
+                <i class="fa-solid fa-cat text-lg text-rose-400"></i>
               </div>
               <span
-                class="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-emerald-400"
+                class="text-lg font-semibold bg-clip-text text-transparent bg-gradient-to-r from-rose-400 to-amber-400"
                 >Benxx Project</span
               >
             </div>
-            
             <div class="flex gap-4">
-      <span><a href="https://balckwolf.dpdns.org" target="_blank" rel="noopener noreferrer" style="font-family: 'Rajdhani', sans-serif;"><img src="https://bmkg.xyz/img/linksub.png" alt="menu" width="30"></a></span>
-             <span><a href="https://t.me/Bleszh" target="_blank" rel="noopener noreferrer" style="font-family: 'Rajdhani', sans-serif;"><img src="https://bmkg.xyz/img/tele.png" alt="menu" width="30"></a></span>
-                    <span><a href="https://www.benxx.dpdns.org" target="_self" rel="noopener noreferrer">
-    <img src="https://bmkg.xyz/img/home.png" alt="menu" width="30"></a></span>
-              </a>
+              <span
+                ><a
+                  href="https://balckwolf.dpdns.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="font-family: 'Rajdhani', sans-serif;"
+                  ><img
+                    src="https://bmkg.xyz/img/linksub.png"
+                    alt="menu"
+                    width="30" /></a
+              ></span>
+              <span
+                ><a
+                  href="https://t.me/Bleszh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="font-family: 'Rajdhani', sans-serif;"
+                  ><img
+                    src="https://bmkg.xyz/img/tele.png"
+                    alt="menu"
+                    width="30" /></a
+              ></span>
+              <span
+                ><a
+                  href="https://www.benxx.dpdns.org"
+                  target="_self"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://bmkg.xyz/img/home.png"
+                    alt="menu"
+                    width="30" /></a
+              ></span>
             </div>
           </div>
-
           <div
             class="h-px bg-gradient-to-r from-transparent via-slate-600/20 to-transparent my-5"
           ></div>
-
           <div class="text-center text-gray-500 text-xs">
             <p>© 2025 Benxx project | Secure Connection Technology</p>
             <p class="mt-1 flex items-center justify-center">
               Dibuat dengan
-              <i class="fas fa-heart text-rose-500 mx-1"></i>
-              untuk privasi online Anda
+              <i class="fas fa-heart text-rose-500 mx-1"></i> untuk privasi
+              online Anda
             </p>
           </div>
         </div>
       </footer>
     </div>
-
     <div id="donation-button" class="fixed bottom-6 right-6 z-[1000]">
       <button
         class="w-12 h-12 rounded-full donation-btn flex items-center justify-center shadow-lg"
@@ -1400,9 +1408,6 @@
         <i class="fas fa-hand-holding-heart text-white text-lg"></i>
       </button>
     </div>
-
-    <!-- QR Code Donation Modal -->
-
     <div id="donation-button" class="fixed bottom-6 right-6 z-[1000]">
       <a
         href="https://nyawer.co/Benxx"
@@ -1412,14 +1417,13 @@
         <i class="fas fa-hand-holding-heart text-white text-lg"></i>
       </a>
     </div>
-
     <script>
       // Global variables
       let proxyList = [];
       let filteredProxyList = [];
       let selectedProxy = null;
       const defaultProxyUrl = "https://raw.githubusercontent.com/xiyosenstore/Emilia/refs/heads/main/Data/alive.txt";
-      const serverDomains = ["siren-web.benxx.workers.dev", "koseong"];
+      const serverDomains = ["siren-web.benxx.workers.dev", "-"];
       let selectedServerDomain = serverDomains[0]; // Default to first domain
       const defaultUUID = "2bcfbfba-b446-4ad5-93ad-72af9e008f61";
       const itemsPerPage = 10;
@@ -1725,7 +1729,7 @@
 
               // Create the new format SS URL with dynamic port
               // connectionUrl = `ss://${userInfo}@${server}:${port}?encryption=none&type=ws&host=${host}&path=${path}&security=${security}&sni=${sni}#${name}`;
-              connectionUrl = `ss://${userInfo}@${server}:${port}?encryption=none&type=ws&host=${host}&path=${path}&security=${security}&sni=${sni}#${name}`;
+              connectionUrl = `ss://${userInfo}@${server}:${port}?v2ray-plugin%3Btls%3Bmux=0%3Bmode=websocket%3Bpath=${path}%3Bsni=${sni}#${name}`;
             }
 
             // Display the result
